@@ -146,10 +146,10 @@ namespace QuantConnect.Securities.Option
 
             // Standard index options are AM-settled, which means they settle on market open of the expiration date.
             // Non-standard tickers (e.g. SPXW, RUTW) are always PM-settled, even when expiring on the 3rd Friday.
-            if (expiryTime.Date == symbol.ID.Date.Date
-                && symbol.SecurityType == SecurityType.IndexOption
-                && IsStandard(symbol)
-                && IndexOptionSymbol.IsAMSettled(symbol))
+           
+                 if( symbol.SecurityType == SecurityType.IndexOption
+                
+                 && IndexOptionSymbol.IsAMSettled(symbol))
             {
                 expiryTime = exchangeHours.GetNextMarketOpen(expiryTime.Date, false);
             }
