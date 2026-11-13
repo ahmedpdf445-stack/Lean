@@ -214,7 +214,7 @@ namespace QuantConnect.Securities.Option
                         // let's log this once per underlying and expiration date: avoiding the same log for multiple option contracts with different strikes/rights
                         && _optionExpirationErrorLog.TryAdd($"{symbol.ID.Underlying}-{symbol.ID.Date}", 1))
                     {
-                        Logging.Log.Error($"OptionSymbol.IsOptionContractExpired(): limiting unexpected option expiration time for symbol {symbol.ID}. Symbol.ID.Date {symbol.ID.Date}. ExpiryTime: {expiryTime}");
+                        Logging.Log.Error($"OptionSymbol.IsOptionContractExpired(): limiting unexpected option expiration time for symbol {symbol.ID}. Symbol.ID.Date {symbol.ID.Date}. ExpiryTime: {expiryTime}"); 
                     }
                 }
                 expiryTime = symbol.ID.Date.AddDays(1).Date;
